@@ -1,18 +1,35 @@
-class Animal:
-    def __init__(self, animal, age):
-        self.animal = animal
-        self.age = age
-    def info (self):
-     print("L'âge de", self.animal , self.age, " ans")
-    def vieillir(self):
-        self.age = self.age+1
-    def nommer(self):
-       self.animal = input(self.animal)
-       print ("L'animal se nomme", self.animal)
-p1 = Animal("l'animal", 0)
-p1.info()
-p1.vieillir()
-p1.info()
-p1.nommer()
+from math import*
+class Forme:
+    def __init__(self):
+        print("ok")   
+
+    def aire(self):
+        a = 0
+        print("L'aire de la forme est de", a, "unités carré")
+class Rectangle(Forme):
+
+    def __init__(self, width, height):
+        Forme.__init__(self)
+        self.width = width
+        self.height = height
+
+    def aire(self):
+        a = self.width*self.height
+        print("L'aire de la forme est de", a, "unités carré")
+class Cercle(Forme):
     
-    
+    def __init__(self, radius):
+        Forme.__init__(self)
+        self.radius = radius
+    def aire(self):
+        import math
+        a = self.radius*self.radius*math.pi
+        print("L'aire de la forme est de", a, "unités carré")
+
+my_form = Forme
+my_form.aire(42)
+my_rectangle = Rectangle(6,7)
+my_rectangle.aire()
+my_circle = Cercle(5)
+my_circle.aire()
+        
